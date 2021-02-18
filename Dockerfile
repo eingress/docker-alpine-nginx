@@ -25,7 +25,7 @@ RUN	./configure \
 	--http-log-path=/dev/stdout \
 	--with-cc-opt="-O2" \
 	--with-ld-opt="-s -static" \
-	&& make -j $(grep processor /proc/cpuinfo | wc -l) \
+	&& make -j$(getconf _NPROCESSORS_ONLN) \
 	&& make install \
 	&& strip /usr/local/nginx/sbin/nginx
 
