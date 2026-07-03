@@ -8,8 +8,9 @@ ARG NGINX_VERSION
 
 RUN apk add --no-cache --update \
 	build-base \
-	pcre-dev \
-	wget \
+	pcre2-dev \
+	pcre2-static \
+  wget \
 	zlib-dev \
 	zlib-static
 
